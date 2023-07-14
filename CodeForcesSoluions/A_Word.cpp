@@ -38,11 +38,14 @@ void solve()
         if(islower(c))l++;
         else u++;
     }
-     if (u > l) {
+     if (u > l) 
+     {
         for (char& c : s) {
             c = toupper(c);
         }
-    } else {
+    } 
+    else 
+    {
         for (char& c : s) {
             c = tolower(c);
         }

@@ -37,7 +37,6 @@ int solve()
     {
         if(find(lst.begin(),lst.end(),c) == lst.end()) 
              lst.push_back(c);
-
     }
 
     if(lst.size()%2 == 0) cout<<"CHAT WITH HER!"<<nl;

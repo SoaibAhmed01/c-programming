@@ -29,50 +29,23 @@ using namespace std;
 
 
 //Driver code
-string checkWinner(const vector<string>& f) {
-    for (int i = 0; i < 3; i++) 
-    {
-        if (f[i][0] != '.' && f[i][0] == f[i][1] && f[i][0] == f[i][2])
-            return string(1, f[i][0]);
-    }
+void solve()
+{
+    int n,k;        cin>>n>>k;
+    int ans=(k-1) / (n-1);
+    cout<<ans+k<<nl;
 
-    for (int j = 0; j < 3; j++) 
-    {
-        if (f[0][j] != '.' && f[0][j] == f[1][j] && f[0][j] == f[2][j])
-            return string(1, f[0][j]);
-    }
-
-    if (f[0][0] != '.' && f[0][0] == f[1][1] && f[0][0] == f[2][2])
-        return string(1, f[0][0]);
-
-    if (f[0][2] != '.' && f[0][2] == f[1][1] && f[0][2] == f[2][0])
-        return string(1, f[0][2]);
-
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++) 
-        {
-            if (f[i][j] == '.')
-                return "DRAW";
-        }
-    }
-
-    return "DRAW";
 }
 
-int main() {
-    int t;
-    cin >> t;
-
-    while (t--) 
+int main()
+{
+    Faster;
+    int tc;     cin>>tc;
+    while(tc--)
     {
-        vector<string> f(3);
-
-        for (int i = 0; i < 3; i++)
-            cin >> f[i];
-
-        cout << checkWinner(f) << endl;
+        solve();
     }
-
     return 0;
 }
+
+

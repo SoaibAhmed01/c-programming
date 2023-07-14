@@ -22,6 +22,7 @@ using namespace std;
 #define  case     "Case " << test++ << ": "
 #define  all(v)   v.begin(), v.end()
 #define  tst      int tst; int test=1; cin >> tst; while(tst--)
+
 #define  Faster   ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 #define  nl       "\n"
 
@@ -29,50 +30,52 @@ using namespace std;
 
 
 //Driver code
-string checkWinner(const vector<string>& f) {
-    for (int i = 0; i < 3; i++) 
+void solve()
+{
+    int n,k;        cin>>n>>k;
+    if(n<k)no;
+    else if(k==1)
     {
-        if (f[i][0] != '.' && f[i][0] == f[i][1] && f[i][0] == f[i][2])
-            return string(1, f[i][0]);
+        yes;
+        cout<<n<<nl;
     }
-
-    for (int j = 0; j < 3; j++) 
+    else if(n%2==0)
     {
-        if (f[0][j] != '.' && f[0][j] == f[1][j] && f[0][j] == f[2][j])
-            return string(1, f[0][j]);
-    }
-
-    if (f[0][0] != '.' && f[0][0] == f[1][1] && f[0][0] == f[2][2])
-        return string(1, f[0][0]);
-
-    if (f[0][2] != '.' && f[0][2] == f[1][1] && f[0][2] == f[2][0])
-        return string(1, f[0][2]);
-
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++) 
+        if(k%2==0)
         {
-            if (f[i][j] == '.')
-                return "DRAW";
+            yes;
+            for(int i=1;i<k;i++) cout<<1<<sp;
+            cout<<n-(k-1)<<nl;
         }
+        else if(k*2<=n)
+        {
+            yes;
+            for(int i=1;i<k;i++) cout<<2<<sp;
+            cout<<n-(k-1)*2<<nl;
+        }
+        else no;
+    }
+    else 
+    {
+        if(k%2==1)
+        {
+            yes;
+            for(int i=1;i<k;i++) cout<<1<<sp;
+            cout<<n-(k-1)<<nl;
+        }
+        else no;
     }
 
-    return "DRAW";
 }
 
-int main() {
-    int t;
-    cin >> t;
-
-    while (t--) 
+int main()
+{
+    Faster;
+    int tc;     cin>>tc;
+    while(tc--)
     {
-        vector<string> f(3);
-
-        for (int i = 0; i < 3; i++)
-            cin >> f[i];
-
-        cout << checkWinner(f) << endl;
+        solve();
     }
-
     return 0;
 }
+

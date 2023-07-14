@@ -40,7 +40,7 @@ int solve()
         v.pb(abs(a-b));
         a=b;
     }
-    sort(v.begin(),v.end());
+    sort(v.begin(),v.end());c
     int sum=0;
     for(int i=0;i<n-1-(k-1);i++) sum+=v[i];
     cout<<sum<<nl;

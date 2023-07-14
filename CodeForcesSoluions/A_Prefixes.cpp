@@ -45,6 +45,7 @@ void solve()
     }
     cout<<ans<<nl;
     cout<<s<<nl;
+    
 
 }
 
